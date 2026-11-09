@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gelap{
+            background-color: #222;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="judul">Belajar DOM Manipulation</h1>
+    <p id="teks">RPL 5</p>
+
+    <h3>Form Inputan</h3>
+    <label>Nama</label>
+    <input type="text" id="nama" placeholder="Ketik Nama">
+    <button id="cek">CEK</button>
+    <p id="hasil"></p>
+    <script>
+        const judul = document.getElementById('judul');
+
+        judul.textContent="Semangat untuk Ujian";
+        judul.innerHTML="Semangat <i>Ujian<i>"
+        judul.style.color="white";
+        judul.style.backgroundColor="navy";
+
+        const teks = document.getElementById('teks');
+        teks.classList.add('gelap');
+
+        const nama=document.getElementById("nama");
+        const cek = document.getElementById("cek");
+        const hasil = document.getElementById("hasil");
+
+        cek.addEventListener('click', () => {
+            hasil.textContent="Halo, "+ nama.value ;
+        });
+    </script>
+</body>
+</html>
